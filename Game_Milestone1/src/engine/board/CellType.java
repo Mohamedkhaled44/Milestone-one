@@ -1,6 +1,6 @@
 package engine.board;
 
-public enum CellType {
-	
-
-}
+public enum CellType{
+	 NORMAL, SAFE, BASE, ENTRY
+	 
+ }
