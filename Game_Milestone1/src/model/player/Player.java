@@ -1,51 +1,60 @@
 package model.player;
 
-import java.util.ArrayList;
-
 import model.Colour;
 import model.card.Card;
+import java.util.ArrayList;
 
 public class Player {
+    private final String name;
+    private final Colour colour;
+    private ArrayList<Card> hand;
+    private final ArrayList<Marble> marbles;
+    private Card selectedCard; 
+    private final ArrayList<Marble> selectedMarbles; // Neither READ nor WRITE.
 
-	private final  String name ;
-	private Card selectedCard ;
-	private  ArrayList<Card> hand= new ArrayList<>()  ;
-	private ArrayList<Marble> marbles= new ArrayList<>();
-	private final ArrayList<Marble> selectedMarbles= new ArrayList<>();
-	private final Colour colour;
-	
-	public  Player(String name, Colour colour){
-		this.name=name;
-		this.colour=colour;
-		for (int i = 0; i < 4; i++) {
-			marbles.add(new Marble(colour));
+    public Player(String name, Colour colour ) {
+        this.name = name;
+        this.colour = colour;
+        this.hand = new ArrayList<>();
+        this.marbles = new ArrayList<>();
+        this.selectedMarbles = new ArrayList<>();
+        // Create 4 marbles with the same colour.
+        for (int i = 0; i < 4; i++) {
+            marbles.add(new Marble(colour));
+        }
+        this.selectedCard = null;
+    }
+    private void playerCards(){
+    	for (int i = 0; i <4; i++) {
+    		this.hand.add(getSelectedCard());
+			}; 	
 			
 		}
-		
-	}
+    
+    public String getName() {
+        return name;
+    }
 
-	public ArrayList<Card> getHand() {
-		return hand;
-	}
+    public Colour getColour() {
+        return colour;
+    }
 
-	public void setHand(ArrayList<Card> hand) {
-		this.hand = hand;
-	}
+    public ArrayList<Card> getHand() {
+        return hand;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setHand(ArrayList<Card> hand) {
+    	
+        this.hand = hand;
+    }
 
-	public Card getSelectedCard() {
-		return selectedCard;
-	}
+    public ArrayList<Marble> getMarbles() {
+        return marbles;
+    }
 
-	public Colour getColour() {
-		return colour;
-	}
-
-	public void setMarbles(ArrayList<Marble> marbles) {
-		this.marbles = marbles;
-	}
-	
+    public Card getSelectedCard() {
+        return selectedCard;
+    }
+    // Setter for selectedCard removed (attribute is READ ONLY).
+    // No getter for selectedMarbles is provided.
 }

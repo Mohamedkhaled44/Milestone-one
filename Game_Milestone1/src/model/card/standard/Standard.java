@@ -6,7 +6,7 @@ import engine.board.*;
 public class Standard extends Card{
 		
 			private int rank; //Attribute
-			private Suit suit;
+			private final Suit suit;
 			public Standard(String name, String description, int rank, Suit suit, BoardManager boardManager,
 					 GameManager gameManager){
 				super(name , description, boardManager,gameManager);

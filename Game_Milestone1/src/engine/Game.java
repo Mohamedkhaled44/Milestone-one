@@ -1,53 +1,93 @@
 package engine;
-import java.io.IOException;
-import java.util.*;
-import model.Colour;
+
 import engine.board.Board;
-import model.card.*;
-import model.player.*;
 import engine.board.BoardManager;
+import model.Colour;
+import model.card.Deck;
+import model.card.Card;
+import model.player.Player;
+import model.player.CPU;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Game implements GameManager {
-	
-	private final Board board;
-	private final ArrayList<Player> players;
-	private final ArrayList<Card> firePit;
-	private int currentPlayerIndex;
-	private int turn;
-	private Deck deck;
-	
-	public Board getBoard() {
-		return board;
-	}
-	public ArrayList<Player> getPlayers(){
-		return players;
-	}
-	public ArrayList<Card> getFirePit(){
-		return firePit;
-	}
-	
-	Game(String playerName) throws IOException{
+    private final Board board;
+    private final ArrayList<Player> players;
+    private final ArrayList<Card> firePit;
+    private int currentPlayerIndex; // Not READ: no getter provided.
+    private int turn;             // Not READ: no getter provided.
+
+    public Game(String playerName) {
+        try {
+            ArrayList<Colour> colours = new ArrayList<>();
+            colours.add(Colour.RED);
+            colours.add(Colour.GREEN);
+            colours.add(Colour.BLUE);
+            colours.add(Colour.YELLOW);
+            Collections.shuffle(colours);
+
+            this.board = new Board(colours, this);
+            // Load the card pool from the CSV file.
+            Deck.loadCardPool(board, this);
+
+            this.players = new ArrayList<>();
+            // Human player with the first colour.
+            players.add(new Player(playerName, colours.get(0)));
+            // Create CPU players for the remaining colours.
+            for (int i = 1; i < colours.size(); i++) {
+                players.add(new CPU("CPU " + i, colours.get(i), this.board));
+            }
+            // Distribute 4 cards to each player's hand.
+            for (Player player : players) {
+                player.setHand(Deck.drawCards());
+            }
+            this.currentPlayerIndex = 0;
+            this.turn = 0;
+            this.firePit = new ArrayList<>();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public ArrayList<Card> getFirePit() {
+        return firePit;
+    }
+
+	@Override
+	public void startGame() {
+		// TODO Auto-generated method stub
 		
-		ArrayList<Colour> colourOrder = new ArrayList<>(List.of(Colour.values()));
-		 Collections.shuffle(colourOrder);
-		 
-		this.board=new Board(colourOrder, this);
-		
-		this.deck= new Deck();
-		Deck.loadCardPool(this, this.board);
-		
-		this.players= new ArrayList<>();
-		this.players.add(new Player (playerName, colourOrder.get(0),this.board));
-		this.players.add(new Player ("CPU1", colourOrder.get(1),this.board));
-		this.players.add(new Player ("CPU2", colourOrder.get(2),this.board));
-		this.players.add(new Player ("CPU3", colourOrder.get(3),this.board));
-		
-		for(Player player:players) {
-		Deck.drawCards(player,4);
-		}
-		this.firePit=new ArrayList<>();
-		this.currentPlayerIndex=0;
-		this.turn=0;
 	}
 
+	@Override
+	public void endGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getCurrentPlayer() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void nextTurn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isWinner() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

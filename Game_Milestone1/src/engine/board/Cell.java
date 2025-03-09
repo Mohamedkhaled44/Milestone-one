@@ -7,12 +7,8 @@ public class Cell {
 	private boolean trap;
 	
 	//lw amlt azma sheele el empty constructor da
-	public Cell(){
-		this.cellType=cellType.NORMAL;
-		this.marble=null;
-		this.trap=false;
-	}
-	Cell(CellType cellType){
+	
+	public Cell(CellType cellType){
 		this.cellType=cellType;
 		this.marble=null;
 		this.trap=false;
@@ -34,11 +30,19 @@ public class Cell {
 		this.cellType=cellType;
 	}
 	
-	public boolean getTrap() {
+	public boolean Trap() {
 		return trap;
 	}
 	public void setTrap(boolean trap) {
 		this.trap=trap;
 	}
+
+
+	public boolean isTrap() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 	
 }

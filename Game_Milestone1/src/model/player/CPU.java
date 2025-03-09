@@ -12,4 +12,8 @@ public class CPU extends Player{
 		// TODO Auto-generated  
 	}
 
+	public BoardManager getBoardManager() {
+		return boardManager;
+	}
+
 }
