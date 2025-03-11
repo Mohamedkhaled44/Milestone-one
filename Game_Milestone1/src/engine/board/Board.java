@@ -63,7 +63,7 @@ public class Board implements BoardManager {
         this.splitDistance = splitDistance;
     }
 
-    // assignTrapCell mustbe private
+    // assignTrapCell must be private
     private void assignTrapCell() {
         Random rand = new Random();
         int index = rand.nextInt(track.size());
