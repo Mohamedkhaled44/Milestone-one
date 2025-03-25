@@ -2,6 +2,7 @@ package model.player;
 
 import model.Colour;
 import model.card.Card;
+
 import java.util.ArrayList;
 
 public class Player {
@@ -24,7 +25,8 @@ public class Player {
         }
         this.selectedCard = null;
     }
-    private void playerCards(){
+    
+	private void playerCards(){
     	for (int i = 0; i <4; i++) {
     		this.hand.add(getSelectedCard());
 			}; 	
