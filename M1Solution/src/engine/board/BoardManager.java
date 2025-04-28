@@ -1,4 +1,7 @@
 package engine.board;
+import java.util.ArrayList;
+import exception.*;
+import model.player.Marble;
 
 import java.util.ArrayList;
 
@@ -11,6 +14,7 @@ import model.player.Marble;
 import model.player.Player;
 
 public interface BoardManager {
+
    int getSplitDistance();
 
 	
@@ -70,3 +74,13 @@ public interface BoardManager {
 	// TODO Auto-generated method stub
 	
 }
+
+	int getSplitDistance();
+	public void moveBy(Marble marble, int steps, boolean destroy) throws IllegalMovementException, IllegalDestroyException;
+	public void swap(Marble marble_1, Marble marble_2) throws IllegalSwapException;
+	public void destroyMarble(Marble marble) throws IllegalDestroyException;
+	public void sendToBase(Marble marble) throws CannotFieldException,IllegalDestroyException;
+	public void sendToSafe(Marble marble) throws InvalidMarbleException;
+	public ArrayList<Marble> getActionableMarbles();
+}
+

@@ -24,6 +24,7 @@ public class SafeZone {
 			cells.add(new Cell(CellType.SAFE));
 		}
 	}
+
 		
 	
 	
@@ -39,5 +40,14 @@ public class SafeZone {
 	} 
 
 	
+
+//M2
+	public boolean isFull() {
+		for(Cell cell: cells) {
+		if(cell.getCellType()!=CellType.SAFE) 
+			return false;
+		}
+	return true;
+	}
 
 }
