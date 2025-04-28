@@ -15,4 +15,9 @@ public class Marble {
 		this.colour = colour;
 	}
 
+	public Player getOwner() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
