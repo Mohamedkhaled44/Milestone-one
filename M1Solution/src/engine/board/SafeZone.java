@@ -23,7 +23,13 @@ public class SafeZone {
 		for (int i = 0; i < 4; i++) {
 			cells.add(new Cell(CellType.SAFE));
 		}
-
 	}
-
+//M2
+	public boolean isFull() {
+		for(Cell cell: cells) {
+		if(cell.getCellType()!=CellType.SAFE) 
+			return false;
+		}
+	return true;
+	}
 }
