@@ -103,6 +103,26 @@ public class Deck {
 		}
 
 	}
+	
+	//Milestone 2
+	
+	// hadafo eno ye3mel refill lel cardpool ba3d ma el cards te5las
+	public static void refillPool(ArrayList<Card> cards) {
+		if(cardsPool== null) {
+			cardsPool= new ArrayList<>();
+		}
+		cardsPool.addAll(cards);
+		
+	}
+	//el mafroof eno bedeeny 3adad el cards el already mawgoda fel cardpool
+	public static int getPoolSize() {
+		if(cardsPool== null) {
+			return 0;
+		}
+		return cardsPool.size();
+	}
+
+	//
 
 	public static ArrayList<Card> drawCards() {
 		Collections.shuffle(cardsPool);

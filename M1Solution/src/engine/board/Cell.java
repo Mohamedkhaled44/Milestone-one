@@ -36,4 +36,20 @@ public class Cell {
 		this.cellType = cellType;
 	}
 
+	public static boolean isOccupied() {          //Deh Zeyada men error fe class safeZone line 33
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isEmpty() {                    //Added from class board line119
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Marble getOccupyingMrable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }
