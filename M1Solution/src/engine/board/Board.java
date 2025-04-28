@@ -88,15 +88,10 @@ public class Board implements BoardManager {
 	//Milestone 2
 	
 	//12
+	//Kan leh tary2a tanya bas atwal
 	
 	
-	
-	
-	
-	
-	
-	
-	/*@Override
+	@Override
 	public void moveBy(Marble marble, int steps, boolean destroy) 
 			throws IllegalMovementException, IllegalDestroyException {
 		
@@ -122,7 +117,7 @@ public class Board implements BoardManager {
 		
 		
 	}
-	*/
+	
 	
 	
 	

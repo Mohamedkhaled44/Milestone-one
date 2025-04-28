@@ -11,6 +11,7 @@ import model.player.Player;
 public interface GameManager {
 
 
+	//Mileston 2
 	void sendHome(Marble marble);
 	void fieldMarble() throws CannotFieldException, IllegalDestroyException;
 	void discardCard(Colour colour) throws CannotDiscardException;
