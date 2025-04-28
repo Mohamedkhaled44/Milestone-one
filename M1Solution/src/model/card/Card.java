@@ -1,7 +1,10 @@
 package model.card;
 
+import java.util.ArrayList;
+
 import engine.GameManager;
 import engine.board.BoardManager;
+import model.player.Marble;
 
 public abstract class Card {
 
@@ -42,4 +45,14 @@ public abstract class Card {
 		this.gameManager = gameManager;
 	}
 
+	public void act(ArrayList<Marble> selectedMarbles) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public abstract boolean validateMarbleColours(ArrayList<Marble> selectedMarbles);
+
+	public abstract boolean validateMarbleSize(ArrayList<Marble> selectedMarbles);
+
+	
 }

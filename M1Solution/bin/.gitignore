@@ -2,4 +2,7 @@
 /exception/
 /model/
 /test/
-/view/
+/BoardManager.class
+/GameManager.class
+/Player.class
+/Board.class

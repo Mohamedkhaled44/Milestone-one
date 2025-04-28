@@ -26,4 +26,9 @@ public class SafeZone {
 
 	}
 
+	public boolean isFull() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
