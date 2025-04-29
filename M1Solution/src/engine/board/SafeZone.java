@@ -50,4 +50,9 @@ public class SafeZone {
 	return true;
 	}
 
+	public boolean isFull() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

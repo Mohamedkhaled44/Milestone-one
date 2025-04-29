@@ -1,5 +1,12 @@
 package model.card;
 
+
+import java.util.ArrayList;
+
+import engine.GameManager;
+import engine.board.BoardManager;
+import model.player.Marble;
+=======
 import java.util.ArrayList;      //Added Automatic
 
 import engine.GameManager;
@@ -7,6 +14,7 @@ import engine.board.BoardManager;
 import exception.ActionException;
 import exception.InvalidMarbleException;
 import model.player.Marble;      //Added Automatic
+
 
 public abstract class Card {
 
@@ -77,4 +85,14 @@ public abstract class Card {
 	throws ActionException, InvalidMarbleException;
 
 
+	public void act(ArrayList<Marble> selectedMarbles) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public abstract boolean validateMarbleColours(ArrayList<Marble> selectedMarbles);
+
+	public abstract boolean validateMarbleSize(ArrayList<Marble> selectedMarbles);
+
+	
 }
