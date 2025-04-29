@@ -1,8 +1,11 @@
 package model.card.standard;
 
+import java.util.ArrayList;
+
 import engine.GameManager;
 import engine.board.BoardManager;
 import model.card.Card;
+import model.player.Marble;
 
 public class Standard extends Card {
 
@@ -22,6 +25,18 @@ public class Standard extends Card {
 
 	public Suit getSuit() {
 		return suit;
+	}
+
+	@Override
+	public boolean validateMarbleColours(ArrayList<Marble> selectedMarbles) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean validateMarbleSize(ArrayList<Marble> selectedMarbles) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
