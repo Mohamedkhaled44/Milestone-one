@@ -2,12 +2,15 @@
 /engine/
 /model/
 
-=======
+
 /test/
+
+
 
 /BoardManager.class
 /GameManager.class
 /Player.class
 /Board.class
-=======
+
+
 
